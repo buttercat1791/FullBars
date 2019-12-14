@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Check wifi connection once per minute
+        UIApplication.shared.setMinimumBackgroundFetchInterval(60)
+        
         return true
     }
 
@@ -30,6 +35,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        // Perform connection attempt
+        // Attempt will succeed (and attemptToConnect method will return true) if login is successful.
+        // If the login page cannot be reached, either 
+        let loginHandler = LoginHandler()
+        if loginHandler.attemptToConnect() {
+            completionHandler(.newData)
+        }
+        completionHandler(.noData)
     }
 
 
