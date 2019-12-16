@@ -3,19 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5B7DFCD523A48B670015C5EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DFCD423A48B670015C5EB /* AppDelegate.swift */; };
 		5B7DFCD723A48B670015C5EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DFCD623A48B670015C5EB /* SceneDelegate.swift */; };
-		5B7DFCD923A48B670015C5EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DFCD823A48B670015C5EB /* ViewController.swift */; };
+		5B7DFCD923A48B670015C5EB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DFCD823A48B670015C5EB /* HomeViewController.swift */; };
 		5B7DFCDC23A48B670015C5EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B7DFCDA23A48B670015C5EB /* Main.storyboard */; };
 		5B7DFCDE23A48B680015C5EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B7DFCDD23A48B680015C5EB /* Assets.xcassets */; };
 		5B7DFCE123A48B680015C5EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B7DFCDF23A48B680015C5EB /* LaunchScreen.storyboard */; };
 		5B7DFCE923A4922D0015C5EB /* LoginHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DFCE823A4922D0015C5EB /* LoginHandler.swift */; };
-		5B7DFCED23A494A50015C5EB /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DFCEC23A494A50015C5EB /* Credentials.swift */; };
-		5B7DFCEF23A494DD0015C5EB /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DFCEE23A494DD0015C5EB /* KeychainError.swift */; };
+		5BE7FBA223A73B5500E62AFB /* LoginAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE7FBA123A73B5500E62AFB /* LoginAddViewController.swift */; };
+		5BE7FBA423A73BAA00E62AFB /* LoginManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE7FBA323A73BAA00E62AFB /* LoginManageViewController.swift */; };
 		D8974279934A4CB4753A18B5 /* Pods_FullBars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE813026C09C6527CE5F79E /* Pods_FullBars.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,14 +24,14 @@
 		5B7DFCD123A48B670015C5EB /* FullBars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FullBars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B7DFCD423A48B670015C5EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B7DFCD623A48B670015C5EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5B7DFCD823A48B670015C5EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5B7DFCD823A48B670015C5EB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5B7DFCDB23A48B670015C5EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B7DFCDD23A48B680015C5EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B7DFCE023A48B680015C5EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B7DFCE223A48B680015C5EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B7DFCE823A4922D0015C5EB /* LoginHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHandler.swift; sourceTree = "<group>"; };
-		5B7DFCEC23A494A50015C5EB /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
-		5B7DFCEE23A494DD0015C5EB /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
+		5BE7FBA123A73B5500E62AFB /* LoginAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAddViewController.swift; sourceTree = "<group>"; };
+		5BE7FBA323A73BAA00E62AFB /* LoginManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManageViewController.swift; sourceTree = "<group>"; };
 		A3991C18208E0941FB121E42 /* Pods-FullBars.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FullBars.debug.xcconfig"; path = "Target Support Files/Pods-FullBars/Pods-FullBars.debug.xcconfig"; sourceTree = "<group>"; };
 		AC401ECD13F8830D37DF88EB /* Pods-FullBars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FullBars.release.xcconfig"; path = "Target Support Files/Pods-FullBars/Pods-FullBars.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,11 +70,11 @@
 			isa = PBXGroup;
 			children = (
 				5B7DFCD423A48B670015C5EB /* AppDelegate.swift */,
-				5B7DFCEC23A494A50015C5EB /* Credentials.swift */,
-				5B7DFCEE23A494DD0015C5EB /* KeychainError.swift */,
+				5B7DFCD823A48B670015C5EB /* HomeViewController.swift */,
+				5BE7FBA123A73B5500E62AFB /* LoginAddViewController.swift */,
 				5B7DFCE823A4922D0015C5EB /* LoginHandler.swift */,
+				5BE7FBA323A73BAA00E62AFB /* LoginManageViewController.swift */,
 				5B7DFCD623A48B670015C5EB /* SceneDelegate.swift */,
-				5B7DFCD823A48B670015C5EB /* ViewController.swift */,
 				5B7DFCDA23A48B670015C5EB /* Main.storyboard */,
 				5B7DFCDD23A48B680015C5EB /* Assets.xcassets */,
 				5B7DFCDF23A48B680015C5EB /* LaunchScreen.storyboard */,
@@ -89,7 +89,6 @@
 				A3991C18208E0941FB121E42 /* Pods-FullBars.debug.xcconfig */,
 				AC401ECD13F8830D37DF88EB /* Pods-FullBars.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -217,10 +216,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B7DFCE923A4922D0015C5EB /* LoginHandler.swift in Sources */,
-				5B7DFCD923A48B670015C5EB /* ViewController.swift in Sources */,
-				5B7DFCED23A494A50015C5EB /* Credentials.swift in Sources */,
+				5BE7FBA223A73B5500E62AFB /* LoginAddViewController.swift in Sources */,
+				5B7DFCD923A48B670015C5EB /* HomeViewController.swift in Sources */,
+				5BE7FBA423A73BAA00E62AFB /* LoginManageViewController.swift in Sources */,
 				5B7DFCD523A48B670015C5EB /* AppDelegate.swift in Sources */,
-				5B7DFCEF23A494DD0015C5EB /* KeychainError.swift in Sources */,
 				5B7DFCD723A48B670015C5EB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

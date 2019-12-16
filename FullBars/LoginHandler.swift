@@ -8,18 +8,15 @@
 
 import Foundation
 import UIKit
+import KeychainAccess
 import Reachability
-import Security
 
 class LoginHandler {
     
     // Captive login page for UDAIR-Hotspot network
     let loginPage = "http://udair2.udallas.edu/cgi-bin/login"
     
-    // Hardcoded values are just a stand-in until keychain can be implemented
-    let username = "mjurkoic"
-    let password = "900878077"
-    
+    let keychain = Keychain()
     let reachability = try! Reachability()
     
     // This is known to work:
@@ -27,11 +24,14 @@ class LoginHandler {
     func attemptToConnect() -> Bool {
         var success: Bool = false
         
+        let username = keychain[loginPage]
+        let password = keychain[username ?? ""]
+        
         // If there is already a wifi connection, there is no need to go through all the login shenanigans.
         if reachability.connection != .wifi {
             success = true
         } else {
-            let loginURLString = "\(loginPage)?user=\(username)&password=\(password)&cmd-authenticate&Login=Log+In"
+            let loginURLString = "\(loginPage)?user=\(username ?? "")&password=\(password ?? "")&cmd-authenticate&Login=Log+In"
             let loginURL = URL(string: loginURLString)!
             var loginRequest = URLRequest(url: loginURL)
             
