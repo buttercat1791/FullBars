@@ -13,6 +13,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -42,10 +43,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Attempt will succeed (and attemptToConnect method will return true) if login is successful.
         // If the login page cannot be reached, either 
         let loginHandler = LoginHandler()
-        if loginHandler.attemptToConnect() {
-            completionHandler(.newData)
+        loginHandler.attemptToConnect() { (success) in
+            if success {
+                completionHandler(.newData)
+            } else {
+                completionHandler(.noData)
+            }
         }
-        completionHandler(.noData)
     }
 
 
