@@ -6,6 +6,7 @@
 //  Copyright © 2019 Michael Jurkoic. All rights reserved.
 //
 
+import BackgroundTasks
 import Foundation
 import UIKit
 import KeychainAccess
@@ -21,17 +22,14 @@ class LoginHandler {
     
     // This is known to work:
     // curl --data "user=mjurkoic&password=900878077&cmd-authenticate&Login=Log+In" -X POST http://udair2.udallas.edu/cgi-bin/login
-    func attemptToConnect(completionHandler: @escaping (_ success: Bool) -> Void) {
+    func attemptToConnect(completionHandler: @escaping () -> Void) {
         print("Attempting to connect")
-        
-        var success: Bool = false
         
         let username: String? = "mjurkoic"
         let password: String? = "900878077"
         
         // If there is already a wifi connection, there is no need to go through all the login shenanigans.
         if reachability.connection != .wifi {
-            success = true
             print("On cellular")
         } else {
             let loginURLString = "\(loginPage)"
@@ -48,13 +46,11 @@ class LoginHandler {
             
             let task = URLSession(configuration: .ephemeral).dataTask(with: loginRequest) { (data, response, error) in
                 if error != nil {
-                    success = false
                     print(error ?? "No error")
                 } else {
-                    success = true
                     print(response ?? "No response")
                 }
-                completionHandler(success)
+                completionHandler()
             }
             task.resume()
         }
