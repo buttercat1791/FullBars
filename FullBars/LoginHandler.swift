@@ -42,8 +42,6 @@ class LoginHandler {
             
             loginRequest.httpMethod = "POST"
             loginRequest.httpBody = loginRequestBody.data(using: .utf8)
-//            loginRequest.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-//            loginRequest.addValue("user=\(username ?? "")&password=\(password ?? "")&cmd-authenticate&Login=Log+In", forHTTPHeaderField: "data-binary")
             loginRequest.timeoutInterval = 5.0
             
             print(loginRequest)
