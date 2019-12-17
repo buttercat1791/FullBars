@@ -36,12 +36,14 @@ class LoginHandler {
         } else {
             let loginURLString = "\(loginPage)"
             let loginURL = URL(string: loginURLString)!
+            let loginRequestBody = "user=\(username ?? "")&password=\(password ?? "")&cmd-authenticate&Login=Log+In"
             
             var loginRequest = URLRequest(url: loginURL)
             
             loginRequest.httpMethod = "POST"
-            loginRequest.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-            loginRequest.addValue("user=\(username ?? "")&password=\(password ?? "")&cmd-authenticate&Login=Log+In", forHTTPHeaderField: "data-binary")
+            loginRequest.httpBody = loginRequestBody.data(using: .utf8)
+//            loginRequest.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+//            loginRequest.addValue("user=\(username ?? "")&password=\(password ?? "")&cmd-authenticate&Login=Log+In", forHTTPHeaderField: "data-binary")
             loginRequest.timeoutInterval = 5.0
             
             print(loginRequest)
