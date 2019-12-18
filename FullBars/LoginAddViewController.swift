@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import KeychainAccess
+import KeychainSwift
 
 class LoginAddViewController: UIViewController {
     
@@ -19,6 +19,8 @@ class LoginAddViewController: UIViewController {
     
     var usernameEntered = false
     var passwordEntered = false
+    
+    let keychain = KeychainSwift()
     
     @IBOutlet weak var loginAddButton: UIButton!
     @IBOutlet weak var usernameField: UITextField!
@@ -44,11 +46,8 @@ class LoginAddViewController: UIViewController {
     
     @IBAction func loginAddButtonTapped(_ sender: Any) {
         if usernameEntered && passwordEntered {
-            // Save the entered credentials to a keychain for the login handler to use.
-            let keychain = Keychain(server: loginPage, protocolType: .http)
-            // So we can find the appropriate username later
-            keychain[loginPage] = username
-            keychain[username] = password
+            keychain.set(username, forKey: "FullBarsUsername")
+            keychain.set(password, forKey: "FullBarsPassword")
         }
         dismiss(animated: true, completion: nil)
     }
