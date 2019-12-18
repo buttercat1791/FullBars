@@ -22,8 +22,8 @@ class LoginHandler {
     
     // This is known to work:
     // curl --data "user=mjurkoic&password=900878077&cmd-authenticate&Login=Log+In" -X POST http://udair2.udallas.edu/cgi-bin/login
-    func attemptToConnect(completionHandler: @escaping () -> Void) {
-        print("Attempting to connect")
+    func attemptToConnect(completionHandler: @escaping (Bool) -> Void) {
+        var success = false
         
         let username: String? = "mjurkoic"
         let password: String? = "900878077"
@@ -47,10 +47,12 @@ class LoginHandler {
             let task = URLSession(configuration: .ephemeral).dataTask(with: loginRequest) { (data, response, error) in
                 if error != nil {
                     print(error ?? "No error")
+                    success = false
                 } else {
-                    print(response ?? "No response")
+                    success = true
+                    print(data ?? "No data")
                 }
-                completionHandler()
+                completionHandler(success)
             }
             task.resume()
         }

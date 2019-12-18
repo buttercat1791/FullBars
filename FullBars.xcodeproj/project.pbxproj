@@ -14,6 +14,7 @@
 		5B7DFCDE23A48B680015C5EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B7DFCDD23A48B680015C5EB /* Assets.xcassets */; };
 		5B7DFCE123A48B680015C5EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B7DFCDF23A48B680015C5EB /* LaunchScreen.storyboard */; };
 		5B7DFCE923A4922D0015C5EB /* LoginHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DFCE823A4922D0015C5EB /* LoginHandler.swift */; };
+		5BBEC03F23AA872200997CAC /* LoginOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBEC03E23AA872200997CAC /* LoginOperation.swift */; };
 		5BE7FBA223A73B5500E62AFB /* LoginAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE7FBA123A73B5500E62AFB /* LoginAddViewController.swift */; };
 		5BE7FBA423A73BAA00E62AFB /* LoginManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE7FBA323A73BAA00E62AFB /* LoginManageViewController.swift */; };
 		D8974279934A4CB4753A18B5 /* Pods_FullBars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE813026C09C6527CE5F79E /* Pods_FullBars.framework */; };
@@ -30,6 +31,7 @@
 		5B7DFCE023A48B680015C5EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B7DFCE223A48B680015C5EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B7DFCE823A4922D0015C5EB /* LoginHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHandler.swift; sourceTree = "<group>"; };
+		5BBEC03E23AA872200997CAC /* LoginOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOperation.swift; sourceTree = "<group>"; };
 		5BE7FBA123A73B5500E62AFB /* LoginAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAddViewController.swift; sourceTree = "<group>"; };
 		5BE7FBA323A73BAA00E62AFB /* LoginManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManageViewController.swift; sourceTree = "<group>"; };
 		A3991C18208E0941FB121E42 /* Pods-FullBars.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FullBars.debug.xcconfig"; path = "Target Support Files/Pods-FullBars/Pods-FullBars.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				5BE7FBA123A73B5500E62AFB /* LoginAddViewController.swift */,
 				5B7DFCE823A4922D0015C5EB /* LoginHandler.swift */,
 				5BE7FBA323A73BAA00E62AFB /* LoginManageViewController.swift */,
+				5BBEC03E23AA872200997CAC /* LoginOperation.swift */,
 				5B7DFCD623A48B670015C5EB /* SceneDelegate.swift */,
 				5B7DFCDA23A48B670015C5EB /* Main.storyboard */,
 				5B7DFCDD23A48B680015C5EB /* Assets.xcassets */,
@@ -217,6 +220,7 @@
 			files = (
 				5B7DFCE923A4922D0015C5EB /* LoginHandler.swift in Sources */,
 				5BE7FBA223A73B5500E62AFB /* LoginAddViewController.swift in Sources */,
+				5BBEC03F23AA872200997CAC /* LoginOperation.swift in Sources */,
 				5B7DFCD923A48B670015C5EB /* HomeViewController.swift in Sources */,
 				5BE7FBA423A73BAA00E62AFB /* LoginManageViewController.swift in Sources */,
 				5B7DFCD523A48B670015C5EB /* AppDelegate.swift in Sources */,

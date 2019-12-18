@@ -7,6 +7,7 @@
 //
 
 import BackgroundTasks
+import Foundation
 import UIKit
 
 @UIApplicationMain
@@ -51,8 +52,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Attempt will succeed (and attemptToConnect method will return true) if login is successful.
         // If the login page cannot be reached, either
         let loginHandler = LoginHandler()
-        loginHandler.attemptToConnect() {
-            completionHandler(.noData)
+        loginHandler.attemptToConnect() { success in
+            if success {
+                completionHandler(.newData)
+            } else {
+                completionHandler(.noData)
+            }
         }
     }
     
@@ -70,8 +75,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     @available(iOS 13.0, *)
     func handleBackgroundTask(task: BGProcessingTask) {
+        let operationQueue = OperationQueue()
         scheduleLoginTask()
-        let operation = LoginHandler()
+        
+        let operation = LoginOperation()
         
         task.expirationHandler = {
             operation.cancel()
@@ -80,6 +87,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         operation.completionBlock = {
             task.setTaskCompleted(success: !operation.isCancelled)
         }
+        
+        operationQueue.addOperation(operation)
     }
 
 

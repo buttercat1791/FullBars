@@ -25,12 +25,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It lets us keep you logged in at UD." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cV-wr-MAE">
-                                        <rect key="frame" x="20" y="571" width="374" height="18"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First time?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rax-r5-IIz">
                                         <rect key="frame" x="162" y="372.5" width="90.5" height="24"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
@@ -45,31 +39,36 @@
                                             <action selector="loginAddButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ydg-sv-0QW"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please keep this app open in the background." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQw-a7-jPv">
-                                        <rect key="frame" x="20" y="540" width="374" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currently on UDAIR-Hotpsot?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRy-ZT-abD">
+                                        <rect key="frame" x="20" y="540" width="374" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pg-Vf-4xc">
+                                        <rect key="frame" x="182.5" y="572" width="49" height="36"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="loginActionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X6o-B2-mkH"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="0cV-wr-MAE" firstAttribute="centerX" secondItem="gsE-Zj-Ede" secondAttribute="centerX" id="6gR-De-lED"/>
-                                    <constraint firstItem="0cV-wr-MAE" firstAttribute="top" secondItem="dQw-a7-jPv" secondAttribute="bottom" constant="10" id="7j1-x4-OMK"/>
+                                    <constraint firstItem="6Pg-Vf-4xc" firstAttribute="centerX" secondItem="gsE-Zj-Ede" secondAttribute="centerX" id="4Vg-jR-5Dv"/>
                                     <constraint firstItem="FRi-Us-rfA" firstAttribute="centerX" secondItem="gsE-Zj-Ede" secondAttribute="centerX" id="7ku-0m-mIn"/>
                                     <constraint firstItem="Rax-r5-IIz" firstAttribute="top" secondItem="dRn-7n-AXK" secondAttribute="bottom" constant="100" id="DAW-OV-KzK"/>
-                                    <constraint firstItem="dQw-a7-jPv" firstAttribute="top" secondItem="FRi-Us-rfA" secondAttribute="bottom" constant="100" id="GaM-ym-JRH"/>
                                     <constraint firstItem="Rax-r5-IIz" firstAttribute="centerY" secondItem="gsE-Zj-Ede" secondAttribute="centerY" id="HCa-28-cVe"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dQw-a7-jPv" secondAttribute="trailing" constant="20" symbolic="YES" id="Jr4-8o-Q5p"/>
-                                    <constraint firstItem="0cV-wr-MAE" firstAttribute="leading" secondItem="gsE-Zj-Ede" secondAttribute="leading" constant="20" id="KPU-AM-naa"/>
-                                    <constraint firstItem="dQw-a7-jPv" firstAttribute="leading" secondItem="gsE-Zj-Ede" secondAttribute="leading" constant="20" id="UuP-ma-LnE"/>
                                     <constraint firstItem="Rax-r5-IIz" firstAttribute="centerX" secondItem="gsE-Zj-Ede" secondAttribute="centerX" id="XSV-pV-DZZ"/>
                                     <constraint firstItem="FRi-Us-rfA" firstAttribute="top" secondItem="Rax-r5-IIz" secondAttribute="bottom" constant="7.5" id="Xp0-2y-LgN"/>
+                                    <constraint firstItem="DRy-ZT-abD" firstAttribute="top" secondItem="FRi-Us-rfA" secondAttribute="bottom" constant="100" id="YWV-Jr-mox"/>
                                     <constraint firstItem="dRn-7n-AXK" firstAttribute="centerX" secondItem="gsE-Zj-Ede" secondAttribute="centerX" id="ahd-3N-j9O"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0cV-wr-MAE" secondAttribute="trailing" constant="20" symbolic="YES" id="cxy-aT-w79"/>
+                                    <constraint firstItem="6Pg-Vf-4xc" firstAttribute="top" secondItem="DRy-ZT-abD" secondAttribute="bottom" constant="8" id="eJ6-3f-uOs"/>
                                     <constraint firstItem="dRn-7n-AXK" firstAttribute="leading" secondItem="gsE-Zj-Ede" secondAttribute="leading" constant="20" id="elz-u9-KdB"/>
-                                    <constraint firstItem="dQw-a7-jPv" firstAttribute="centerX" secondItem="gsE-Zj-Ede" secondAttribute="centerX" id="enR-Sd-lmN"/>
+                                    <constraint firstAttribute="trailing" secondItem="DRy-ZT-abD" secondAttribute="trailing" constant="20" id="gNt-OQ-gwu"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dRn-7n-AXK" secondAttribute="trailing" constant="20" symbolic="YES" id="nQC-7C-DVZ"/>
+                                    <constraint firstItem="DRy-ZT-abD" firstAttribute="leading" secondItem="gsE-Zj-Ede" secondAttribute="leading" constant="20" id="nZu-dx-ybp"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -82,8 +81,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" selectedImage="house.fill" catalog="system" id="3Nb-gF-wsW"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="3Nb-gF-wsW"/>
                     <connections>
+                        <outlet property="loginActionButton" destination="6Pg-Vf-4xc" id="SAY-KK-mLq"/>
                         <outlet property="loginAddButton" destination="FRi-Us-rfA" id="lfq-xY-zr6"/>
                     </connections>
                 </viewController>
@@ -179,7 +179,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yf5-T4-XBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Add Login" selectedImage="pencil.and.ellipsis.rectangle" catalog="system" id="l0r-Dt-2UL"/>
+                    <tabBarItem key="tabBarItem" title="Add Login" id="l0r-Dt-2UL"/>
                     <navigationItem key="navigationItem" id="seU-DF-z26"/>
                     <connections>
                         <outlet property="loginAddButton" destination="6EK-xi-GLG" id="wnE-bK-Lfq"/>
@@ -211,8 +211,4 @@
             <point key="canvasLocation" x="2781" y="139"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="house.fill" catalog="system" width="64" height="52"/>
-        <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
-    </resources>
 </document>
