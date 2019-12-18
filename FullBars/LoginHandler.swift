@@ -18,20 +18,24 @@ class LoginHandler {
     let loginPage = "http://udair2.udallas.edu/cgi-bin/login"
     
     let keychain = Keychain()
-    let reachability = try! Reachability()
+    let reachability = try! Reachability(hostname: "https://www.apple.com")
     
     // This is known to work:
     // curl --data "user=mjurkoic&password=900878077&cmd-authenticate&Login=Log+In" -X POST http://udair2.udallas.edu/cgi-bin/login
-    func attemptToConnect(completionHandler: @escaping (Bool) -> Void) {
+    func attemptToConnect(completionHandler: @escaping (Bool, Bool) -> Void) {
         var success = false
+        var alreadyOnWifi = false
         
         let username: String? = "mjurkoic"
         let password: String? = "900878077"
         
         // If there is already a wifi connection, there is no need to go through all the login shenanigans.
-        if reachability.connection != .wifi {
-            print("On cellular")
+        if reachability.connection == .wifi {
+            alreadyOnWifi = true
+            completionHandler(success, alreadyOnWifi)
         } else {
+            alreadyOnWifi = false
+            
             let loginURLString = "\(loginPage)"
             let loginURL = URL(string: loginURLString)!
             let loginRequestBody = "user=\(username ?? "")&password=\(password ?? "")&cmd-authenticate&Login=Log+In"
@@ -52,7 +56,7 @@ class LoginHandler {
                     success = true
                     print(data ?? "No data")
                 }
-                completionHandler(success)
+                completionHandler(success, alreadyOnWifi)
             }
             task.resume()
         }

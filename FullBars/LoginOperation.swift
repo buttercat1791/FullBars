@@ -13,8 +13,10 @@ class LoginOperation: Operation {
     override func main() {
         let loginHandler = LoginHandler()
         
-        loginHandler.attemptToConnect() { success in
-            if !success {
+        loginHandler.attemptToConnect() { (success, alreadyOnWifi) in
+            if alreadyOnWifi {
+                print("Already on wifi")
+            } else if !success {
                 print("Login attempt failed")
             }
         }
