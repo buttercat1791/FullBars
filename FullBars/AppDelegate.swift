@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Attempt will succeed (and attemptToConnect method will return true) if login is successful.
         // If the login page cannot be reached, either
         let loginHandler = LoginHandler()
-        loginHandler.attemptToConnect() { (success, alreadyOnWifi) in
+        loginHandler.attemptToConnect() { (success, alreadyOnWifi, keychainValues) in
             if success {
                 completionHandler(.newData)
             } else {

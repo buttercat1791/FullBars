@@ -22,12 +22,22 @@ class LoginHandler {
     
     // This is known to work:
     // curl --data "user=mjurkoic&password=900878077&cmd-authenticate&Login=Log+In" -X POST http://udair2.udallas.edu/cgi-bin/login
-    func attemptToConnect(completionHandler: @escaping (Bool, Bool) -> Void) {
+    func attemptToConnect(completionHandler: @escaping (Bool, Bool, Bool) -> Void) {
         var success = false
         var alreadyOnWifi = false
+        var keychainValues = false
         
-        let username: String? = "mjurkoic"
-        let password: String? = "900878077"
+        let username: String? = keychain.get("FullBarsUsername")
+        let password: String? = keychain.get("FullBarsPassword")
+        
+        // If no keychain values have been entered, use that return value to let the user know.
+        // TODO: Add better checking for existence of keys.
+        if (username != "" && password != "") {
+            keychainValues = true
+        } else {
+            keychainValues = false
+            completionHandler(success, alreadyOnWifi, keychainValues)
+        }
         
         // If there is already a wifi connection, there is no need to go through all the login shenanigans.
         if reachability.connection == .wifi {
@@ -54,7 +64,7 @@ class LoginHandler {
                 success = true
                 print(data ?? "No data")
             }
-            completionHandler(success, alreadyOnWifi)
+            completionHandler(success, alreadyOnWifi, keychainValues)
         }
         task.resume()
     }
