@@ -6,6 +6,7 @@
 //  Copyright © 2019 Michael Jurkoic. All rights reserved.
 //
 
+import KeychainSwift
 import UIKit
 
 class HomeViewController: UIViewController {
@@ -14,6 +15,9 @@ class HomeViewController: UIViewController {
     let alreadyConnectedAlert = UIAlertController(title: "FullBars", message: "Already connected to wifi.", preferredStyle: .alert)
     let failureAlert = UIAlertController(title: "Error", message: "Failed to connect.", preferredStyle: .alert)
     let keychainAlert = UIAlertController(title: "Missing Credentials", message: "Please add login credentials.", preferredStyle: .alert)
+    
+    let keychain = KeychainSwift()
+    let manualSuccesses = "ManualSuccesses"
 
     @IBOutlet weak var loginAddButton: UIButton!
     @IBOutlet weak var loginActionButton: UIButton!
@@ -44,13 +48,24 @@ class HomeViewController: UIViewController {
         let loginHandler = LoginHandler()
         loginHandler.attemptToConnect { (success, alreadyOnWifi, keychainValues) in
             if success {
-                self.present(self.successAlert, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    self.present(self.successAlert, animated: true, completion: nil)
+                }
+                var successCount = Int(self.keychain.get(self.manualSuccesses) ?? "0") ?? 0
+                successCount += 1
+                self.keychain.set(String(successCount), forKey: self.manualSuccesses)
             } else if !keychainValues {
-                self.present(self.keychainAlert, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    self.present(self.keychainAlert, animated: true, completion: nil)
+                }
             } else if alreadyOnWifi {
-                self.present(self.alreadyConnectedAlert, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    self.present(self.alreadyConnectedAlert, animated: true, completion: nil)
+                }
             } else if !success {
-                self.present(self.failureAlert, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    self.present(self.failureAlert, animated: true, completion: nil)
+                }
             }
         }
     }

@@ -8,11 +8,14 @@
 
 import BackgroundTasks
 import Foundation
+import KeychainSwift
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    let keychain = KeychainSwift()
+    let automaticSuccesses = "AutomaticSucceses"
     
     var window: UIWindow?
 
@@ -53,6 +56,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If the login page cannot be reached, either
         let loginHandler = LoginHandler()
         loginHandler.attemptToConnect() { (success, alreadyOnWifi, keychainValues) in
+            if success == true && alreadyOnWifi == false {
+                var automaticCount = Int(self.keychain.get(self.automaticSuccesses) ?? "0") ?? 0
+                automaticCount += 1
+                self.keychain.set(String(automaticCount), forKey: self.automaticSuccesses)
+            }
             if success {
                 completionHandler(.newData)
             } else {
