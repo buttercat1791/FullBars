@@ -12,21 +12,17 @@ import UIKit
 class LoginOperation: Operation {
     
     let keychain = KeychainSwift()
-    let automaticSuccesses = "AutomaticSuccesses"
+    let logger = StatisticsLogger()
     
     override func main() {
         let loginHandler = LoginHandler()
         
         loginHandler.attemptToConnect() { (success, alreadyOnWifi, keychainValues) in
-            if success == true && alreadyOnWifi == false {
-                var automaticCount = Int(self.keychain.get(self.automaticSuccesses) ?? "0") ?? 0
-                automaticCount += 1
-                self.keychain.set(String(automaticCount), forKey: self.automaticSuccesses)
-            }
-            if alreadyOnWifi {
-                print("Already on wifi")
-            } else if !success {
-                print("Login attempt failed")
+            // Log the attempt for statistics-keeping
+            if success == true {
+                self.logger.log(manual: false, success: true)
+            } else if success == false {
+                self.logger.log(manual: false, success: false)
             }
         }
     }

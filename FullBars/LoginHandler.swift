@@ -52,7 +52,7 @@ class LoginHandler {
         
         loginRequest.httpMethod = "POST"
         loginRequest.httpBody = loginRequestBody.data(using: .utf8)
-        loginRequest.timeoutInterval = 2.0
+        loginRequest.timeoutInterval = 5.0
         
         print(loginRequest)
         

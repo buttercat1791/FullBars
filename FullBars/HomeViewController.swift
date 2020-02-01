@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     let keychainAlert = UIAlertController(title: "Missing Credentials", message: "Please add login credentials.", preferredStyle: .alert)
     
     let keychain = KeychainSwift()
-    let manualSuccesses = "ManualSuccesses"
+    let logger = StatisticsLogger()
 
     @IBOutlet weak var loginAddButton: UIButton!
     @IBOutlet weak var loginActionButton: UIButton!
@@ -51,9 +51,6 @@ class HomeViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.present(self.successAlert, animated: true, completion: nil)
                 }
-                var successCount = Int(self.keychain.get(self.manualSuccesses) ?? "0") ?? 0
-                successCount += 1
-                self.keychain.set(String(successCount), forKey: self.manualSuccesses)
             } else if !keychainValues {
                 DispatchQueue.main.async {
                     self.present(self.keychainAlert, animated: true, completion: nil)
@@ -66,6 +63,13 @@ class HomeViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.present(self.failureAlert, animated: true, completion: nil)
                 }
+            }
+            
+            // Log the attempt for statistics-keeping
+            if success == true {
+                self.logger.log(manual: true, success: true)
+            } else if success == false {
+                self.logger.log(manual: true, success: false)
             }
         }
     }

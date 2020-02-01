@@ -15,7 +15,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let keychain = KeychainSwift()
-    let automaticSuccesses = "AutomaticSucceses"
+    let logger = StatisticsLogger()
     
     var window: UIWindow?
 
@@ -53,14 +53,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         // Perform connection attempt
         // Attempt will succeed (and attemptToConnect method will return true) if login is successful.
-        // If the login page cannot be reached, either
         let loginHandler = LoginHandler()
         loginHandler.attemptToConnect() { (success, alreadyOnWifi, keychainValues) in
-            if success == true && alreadyOnWifi == false {
-                var automaticCount = Int(self.keychain.get(self.automaticSuccesses) ?? "0") ?? 0
-                automaticCount += 1
-                self.keychain.set(String(automaticCount), forKey: self.automaticSuccesses)
+            // Log the attempt for statistics-keeping
+            if success == true {
+                self.logger.log(manual: false, success: true)
+            } else if success == false {
+                self.logger.log(manual: false, success: false)
             }
+            
+            // Call the callback function
             if success {
                 completionHandler(.newData)
             } else {

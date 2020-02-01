@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B494C5923DBB74B0079C192 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B494C5823DBB74B0079C192 /* StatisticsViewController.swift */; };
+		5B74845C23E4EFAF00B1596B /* StatisticsLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B74845B23E4EFAF00B1596B /* StatisticsLogger.swift */; };
 		5B7DFCD523A48B670015C5EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DFCD423A48B670015C5EB /* AppDelegate.swift */; };
 		5B7DFCD723A48B670015C5EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DFCD623A48B670015C5EB /* SceneDelegate.swift */; };
 		5B7DFCD923A48B670015C5EB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DFCD823A48B670015C5EB /* HomeViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		0EE813026C09C6527CE5F79E /* Pods_FullBars.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FullBars.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B494C5823DBB74B0079C192 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		5B74845B23E4EFAF00B1596B /* StatisticsLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsLogger.swift; sourceTree = "<group>"; };
 		5B7DFCD123A48B670015C5EB /* FullBars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FullBars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B7DFCD423A48B670015C5EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B7DFCD623A48B670015C5EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				5B7DFCE823A4922D0015C5EB /* LoginHandler.swift */,
 				5BBEC03E23AA872200997CAC /* LoginOperation.swift */,
 				5B7DFCD623A48B670015C5EB /* SceneDelegate.swift */,
+				5B74845B23E4EFAF00B1596B /* StatisticsLogger.swift */,
 				5B494C5823DBB74B0079C192 /* StatisticsViewController.swift */,
 				5B7DFCDA23A48B670015C5EB /* Main.storyboard */,
 				5B7DFCDD23A48B680015C5EB /* Assets.xcassets */,
@@ -222,6 +225,7 @@
 				5BE7FBA223A73B5500E62AFB /* LoginAddViewController.swift in Sources */,
 				5BBEC03F23AA872200997CAC /* LoginOperation.swift in Sources */,
 				5B7DFCD923A48B670015C5EB /* HomeViewController.swift in Sources */,
+				5B74845C23E4EFAF00B1596B /* StatisticsLogger.swift in Sources */,
 				5B7DFCD523A48B670015C5EB /* AppDelegate.swift in Sources */,
 				5B7DFCD723A48B670015C5EB /* SceneDelegate.swift in Sources */,
 				5B494C5923DBB74B0079C192 /* StatisticsViewController.swift in Sources */,
